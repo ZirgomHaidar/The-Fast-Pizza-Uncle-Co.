@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function SearchOrder() {
   const [query, setQuery] = useState("")
+
   const navigate = useNavigate()
 
   function handleSubmit(e) {
@@ -15,6 +16,7 @@ function SearchOrder() {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className="customInput w-80"
         placeholder="Search Order #"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
