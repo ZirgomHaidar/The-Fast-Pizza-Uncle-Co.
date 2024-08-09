@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./ui/Home"
 import Menu from "./features/menu/Menu"
@@ -10,6 +9,7 @@ import AppLayout from "./ui/AppLayout"
 import Error from "./ui/Error"
 import orderLoader from "./features/order/orderLoader"
 import { createOrderAction } from "./features/order/createOrderAction"
+import { updateOrderAction } from "./features/order/updateOrderAction"
 
 const router = createBrowserRouter([
   {
@@ -40,6 +40,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
