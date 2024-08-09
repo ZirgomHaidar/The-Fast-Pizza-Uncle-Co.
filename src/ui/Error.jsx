@@ -5,10 +5,12 @@ function NotFound() {
   const error = useRouteError()
 
   return (
-    <div>
+    <div className="h-full content-center items-center space-y-8 text-center text-3xl">
       <h1>Something went wrong 😢</h1>
-      <p>{error.data || error.message}</p>
-      <button onClick={() => navigate(-1)}>&larr; Go back</button>
+      <p>{`ERROR: ${error.data || error.message}`}</p>
+      <button className="customButton text-xl" onClick={() => navigate(-1)}>
+        &larr; Go back
+      </button>
     </div>
   )
 }
